@@ -27,20 +27,41 @@ public class Main5Activity extends AppCompatActivity {
         e3 = (EditText)findViewById(R.id.editText7);
         c1 = (CheckBox)findViewById(R.id.checkBox);
         b1 = (Button)findViewById(R.id.button5);
-        t1 = (TextView)findViewById(R.id.textView12);
-        t2 = (TextView)findViewById(R.id.textView13);
+        t1 = (TextView)findViewById(R.id.textView10);
+        t2 = (TextView)findViewById(R.id.textView12);
 
         b1.setOnClickListener(new View.OnClickListener(){
             public void onClick (View v){
                 String pizza = e1.getText().toString();
+                pizza = pizza.trim();
                 String pasta = e2.getText().toString();
+                pasta = pasta.trim();
                 String salad = e3.getText().toString();
+                salad = salad.trim();
 
+                if (pizza.getBytes().length == 0){
+                    e1.setText("0");
+                    pizza = e1.getText().toString();
+                }
+                if (pasta.getBytes().length == 0){
+                    e2.setText("0");
+                    pasta = e2.getText().toString();
+                }
+                if (salad.getBytes().length == 0){
+                    e3.setText("0");
+                    salad = e3.getText().toString();
+                }
+
+                int count = Integer.parseInt(pizza) + Integer.parseInt(pasta) + Integer.parseInt(salad);
                 if (c1.isChecked()){
-                    double membership = 0.9;
+                    int coast = (int)((Integer.parseInt(pizza)*15000 + Integer.parseInt(pasta)*13000 + Integer.parseInt(salad)*9000) * 0.9);
+                    t1.setText(Integer.toString(count));
+                    t2.setText(Integer.toString(coast));
                 }
                 else{
-                    double membership = 1;
+                    int coast = Integer.parseInt(pizza)*15000 + Integer.parseInt(pasta)*13000 + Integer.parseInt(salad)*9000;
+                    t1.setText(Integer.toString(count));
+                    t2.setText(Integer.toString(coast));
                 }
             }
         });

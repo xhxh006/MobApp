@@ -18,19 +18,20 @@ public class Main4Activity extends AppCompatActivity {
         init();
     }
     void init(){
-        e1 = (EditText)findViewById(R.id.editText);
-        e2 = (EditText)findViewById(R.id.editText2);
+        e1 = (EditText)findViewById(R.id.editText4);
+        e2 = (EditText)findViewById(R.id.editText3);
 
-        b1 = (Button)findViewById(R.id.button);
-        b2 = (Button)findViewById(R.id.button2);
+        b1 = (Button)findViewById(R.id.button4);
+        b2 = (Button)findViewById(R.id.button3);
 
         b1.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
                 String ctemp = e1.getText().toString();
                 double result1 = Float.parseFloat(ctemp) * 1.8 +32;
+                String temp = String.format("%.1f",result1);
 
-                Toast.makeText(getApplicationContext(),"화씨온도는 "+result1+"도 입니다.",Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(),"화씨온도는 "+temp+"도 입니다.",Toast.LENGTH_SHORT).show();
             }
         });
         b2.setOnClickListener(new View.OnClickListener() {
@@ -38,8 +39,9 @@ public class Main4Activity extends AppCompatActivity {
             public void onClick(View v) {
                 String ftemp = e2.getText().toString();
                 double result2 = (Float.parseFloat(ftemp) - 32) / 1.8;
+                String temp = String.format("%.1f",result2);
 
-                Toast.makeText(getApplicationContext(),"섭씨온도는 "+result2+"도 입니다.", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(),"섭씨온도는 "+temp+"도 입니다.", Toast.LENGTH_SHORT).show();
             }
         });
     }

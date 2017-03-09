@@ -19,8 +19,8 @@ public class Main3Activity extends AppCompatActivity {
         init();
     }
     void init(){
-        e1 = (EditText)findViewById(R.id.editText);
-        e2 = (EditText)findViewById(R.id.editText2);
+        e1 = (EditText)findViewById(R.id.editText2);
+        e2 = (EditText)findViewById(R.id.editText);
 
         b1 = (Button)findViewById(R.id.button);
         b2 = (Button)findViewById(R.id.button2);
@@ -28,7 +28,7 @@ public class Main3Activity extends AppCompatActivity {
         b1.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
                 String year = e1.getText().toString();
-                int result1 = 2017 - Integer.parseInt(year) + 1;
+                int result1 = (2017 - Integer.parseInt(year) + 1);
 
                 Toast.makeText(getApplicationContext(),"당신의 나이는 "+result1+"세 입니다.", Toast.LENGTH_SHORT).show();
 
@@ -37,7 +37,7 @@ public class Main3Activity extends AppCompatActivity {
         b2.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
                 String old = e2.getText().toString();
-                int result2 = 2017 - Integer.parseInt(old) - 1;
+                int result2 = (2017 - Integer.parseInt(old) + 1);
 
                 Toast.makeText(getApplicationContext(),"당신이 태어난 해는 "+result2+"년 입니다.",Toast.LENGTH_SHORT).show();
             }

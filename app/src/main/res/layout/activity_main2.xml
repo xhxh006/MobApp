@@ -20,8 +20,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:inputType="textPersonName"
-        android:hint="숫자를 입력" />
+        android:hint="숫자를 입력"
+        android:inputType="number" />
 
     <TextView
         android:id="@+id/textView2"
@@ -34,8 +34,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:inputType="textPersonName"
-        android:hint="숫자를 입력" />
+        android:hint="숫자를 입력"
+        android:inputType="number" />
 
     <Button
         android:id="@+id/b1"
